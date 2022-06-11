@@ -3,11 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:task_manager/models/task.dart';
-import 'package:task_manager/views/calendar.dart';
 import 'package:task_manager/views/tabs/task_done.dart';
 import 'package:task_manager/views/tabs/today_task.dart';
 import 'package:task_manager/views/tabs/upcoming_task.dart';
-
 import '../models/mockTask.dart';
 
 class TodoPage extends StatefulWidget {
@@ -94,8 +92,8 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
               icon: const Icon(CupertinoIcons.calendar,
                   color: Colors.black, size: 30),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CalendarPage()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => CalendarPage()));
               },
             ),
             actions: [
@@ -157,33 +155,16 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
                       width: _width * 0.95,
                       child: TabBar(
                           controller: _tabcontroller,
-                          labelColor: Colors.black,
+                          labelColor: Colors.white,
                           unselectedLabelColor: Colors.black,
                           labelStyle: GoogleFonts.manrope(
                               color: Colors.black, fontWeight: FontWeight.w600),
                           unselectedLabelStyle: GoogleFonts.manrope(
                               color: Colors.black, fontWeight: FontWeight.w600),
                           indicator: BoxDecoration(
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(0),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Colors.black,
-                                  offset: Offset(
-                                    -3.0,
-                                    4.0,
-                                  ),
-                                  blurRadius: 0.0,
-                                  spreadRadius: 1.0,
-                                ), //BoxShadow
-                                BoxShadow(
-                                  color: Colors.white,
-                                  offset: Offset(0.0, 0.0),
-                                  blurRadius: 0.0,
-                                  spreadRadius: 0.0,
-                                ),
-                                //BoxShadow
-                              ]),
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(60)
+                              ),
                           tabs: tablist))),
               Padding(
                 padding: EdgeInsets.all(20),

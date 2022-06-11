@@ -60,15 +60,7 @@ class _NewTaskPageState extends State<NewTaskPage>
                   //
                   Column(
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: EdgeInsets.only(left: 50.0, bottom: 8),
-                            child: Text('TITLE:',
-                                style: GoogleFonts.manrope(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400))),
-                      ),
+                   
 
                       //
                       Padding(
@@ -90,6 +82,7 @@ class _NewTaskPageState extends State<NewTaskPage>
                               //  color: themeProvider.themeMode().textColor,
                               fontWeight: FontWeight.bold),
                           decoration: InputDecoration(
+                            border: UnderlineInputBorder(),
                             hintText: "Enter here...",
                             hintStyle: TextStyle(
                                 fontSize: 18,
@@ -98,18 +91,6 @@ class _NewTaskPageState extends State<NewTaskPage>
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 27, horizontal: 25),
                             focusColor: Colors.brown,
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(0),
-                              borderSide: BorderSide(
-                                color: Colors.brown,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(0),
-                              borderSide: BorderSide(
-                                  // color: themeProvider.themeMode().borderColor,
-                                  ),
-                            ),
                             suffixIcon: isSubmitted == true
                                 // will turn the visibility of the 'checkbox' icon
                                 // ON or OFF based on the condition we set before
@@ -265,16 +246,7 @@ class _NewTaskPageState extends State<NewTaskPage>
                   SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    "Payment will be registered as a one time payment if\nno recurrence option is chosen",
-                    style: TextStyle(
-                      fontFamily: 'avenir',
-                      fontSize: 15.5,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.brown[300],
-                    ),
-                    //
-                  ),
+                  
                   TextButton(
                     onPressed: () {},
                     child: Container(
@@ -284,24 +256,9 @@ class _NewTaskPageState extends State<NewTaskPage>
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
                           borderRadius: BorderRadius.circular(0),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.black,
-                              offset: Offset(
-                                -3.0,
-                                4.0,
-                              ),
-                              blurRadius: 0.0,
-                              spreadRadius: 1.0,
-                            ), //BoxShadow
-                            BoxShadow(
-                              color: Colors.white,
-                              offset: Offset(0.0, 0.0),
-                              blurRadius: 0.0,
-                              spreadRadius: 0.0,
-                            ),
+                          
                             //BoxShadow
-                          ]),
+                          ),
                       child: const Center(
                         child: Text(
                           'Create Task',
