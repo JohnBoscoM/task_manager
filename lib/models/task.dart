@@ -1,10 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Task {
   String? title;
   DateTime? dueDate;
-  String? tags;
+  List<dynamic>? tags;
   bool? isCompleted;
   int? urgencyLevel;
-  int? userId;
+  String? userId;
 
   Task();
 
@@ -19,7 +21,7 @@ class Task {
 
   Task.fromSnapshot(snapshot)
       : title = snapshot.data()['Title'],
-        dueDate = snapshot.data()['DueData'].toDate(),
+        dueDate = (snapshot.data()['DueDate'] as Timestamp).toDate(),
         tags = snapshot.data()['Tags'],
         isCompleted = snapshot.data()['IsCompleted'],
         urgencyLevel = snapshot.data()['UrgencyLevel'],

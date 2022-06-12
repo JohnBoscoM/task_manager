@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/firebase_options.dart';
+import 'package:task_manager/views/navbar.dart';
 import 'package:task_manager/views/startpage.dart';
 
 void main() async {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: StartPage(),
+      home: NavBar(),
     );
   }
 }

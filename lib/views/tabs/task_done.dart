@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:task_manager/models/mockTask.dart';
 
-Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
+Widget taskDoneContainer(double vh, double vw, List<Object> _taskList) {
   return Expanded(
     child: Container(
       height: vh * 0.85,
@@ -27,10 +27,10 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.circular(0),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black,
-                        offset: const Offset(
+                        offset: Offset(
                           -4.0,
                           3.0,
                         ),
@@ -39,7 +39,7 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                       ), //BoxShadow
                       BoxShadow(
                         color: Colors.white,
-                        offset: const Offset(0.0, 0.0),
+                        offset: Offset(0.0, 0.0),
                         blurRadius: 0.0,
                         spreadRadius: 0.0,
                       ), //BoxShadow
@@ -59,10 +59,10 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.black),
                                   borderRadius: BorderRadius.circular(0),
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       color: Colors.black,
-                                      offset: const Offset(
+                                      offset: Offset(
                                         -3.0,
                                         4.0,
                                       ),
@@ -71,7 +71,7 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                                     ), //BoxShadow
                                     BoxShadow(
                                       color: Colors.white,
-                                      offset: const Offset(0.0, 0.0),
+                                      offset: Offset(0.0, 0.0),
                                       blurRadius: 0.0,
                                       spreadRadius: 0.0,
                                     ),
@@ -89,10 +89,10 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.black),
                                 borderRadius: BorderRadius.circular(0),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     color: Colors.black,
-                                    offset: const Offset(
+                                    offset: Offset(
                                       -3.0,
                                       4.0,
                                     ),
@@ -101,7 +101,7 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                                   ), //BoxShadow
                                   BoxShadow(
                                     color: Colors.white,
-                                    offset: const Offset(0.0, 0.0),
+                                    offset: Offset(0.0, 0.0),
                                     blurRadius: 0.0,
                                     spreadRadius: 0.0,
                                   ),
@@ -117,7 +117,7 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                       ),
                       Row(children: [
                         SizedBox(width: 15),
-                        Text(taskItem.title,
+                        Text("taskItem.title",
                             textScaleFactor: 1.2,
                             style: GoogleFonts.manrope(
                                 fontWeight: FontWeight.bold)),
@@ -127,7 +127,7 @@ Widget taskDoneContainer(double vh, double vw, List<MockTask> _taskList) {
                           SizedBox(width: 15),
                           Icon(CupertinoIcons.calendar, size: 18),
                           SizedBox(width: 10),
-                          Text(taskItem.deadline.toString(),
+                          Text("taskItem.deadline.toString()",
                               style: GoogleFonts.manrope(
                                   fontWeight: FontWeight.w600))
                         ],

@@ -16,7 +16,7 @@ class TodoPage extends StatefulWidget {
 class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
   String welcome_text = "";
   late TabController _tabcontroller;
-  List<Object>? _taskList;
+  List<Object> _taskList = [];
 
   int _selectedIndex = 0;
   MockTask task1 = new MockTask("Publish Flutter App", new DateTime.now(),
@@ -34,7 +34,7 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
   ];
 
   @override
-  void didChangeDependencies() {
+  Future<void> didChangeDependencies() async {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     getAllUserTasks();
@@ -43,6 +43,7 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
   @override
   void initState() {
     // TODO: implement initState
+
     super.initState();
 
     list.add(task1);
@@ -163,8 +164,7 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
                               color: Colors.black, fontWeight: FontWeight.w600),
                           indicator: BoxDecoration(
                               color: Colors.black,
-                              borderRadius: BorderRadius.circular(60)
-                              ),
+                              borderRadius: BorderRadius.circular(60)),
                           tabs: tablist))),
               Padding(
                 padding: EdgeInsets.all(20),
@@ -175,9 +175,9 @@ class _TodoPageState extends State<TodoPage> with TickerProviderStateMixin {
                     child: TabBarView(
                       controller: _tabcontroller,
                       children: [
-                        todayTaskContainer(_height, _width, list),
-                        upcomingTaskContainer(_height, _width, list),
-                        taskDoneContainer(_height, _width, list),
+                        todayTaskContainer(_height, _width, _taskList),
+                        upcomingTaskContainer(_height, _width, _taskList),
+                        taskDoneContainer(_height, _width, _taskList),
                       ],
                     ),
                   ),

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:task_manager/models/mockTask.dart';
 
-Widget todayTaskContainer(double vh, double vw, List<MockTask> _taskList) {
+Widget todayTaskContainer(double vh, double vw, List<dynamic> _taskList) {
   return Expanded(
     child: Container(
       height: vh * 0.9,
@@ -160,7 +160,7 @@ Widget buildTaskCard(double vh, double vw, taskItem) {
                   SizedBox(width: 15),
                   Icon(CupertinoIcons.calendar, size: 18),
                   SizedBox(width: 10),
-                  Text(taskItem.deadline.toString(),
+                  Text(taskItem.dueDate.toString(),
                       style: GoogleFonts.manrope(fontWeight: FontWeight.w600))
                 ],
               ),
